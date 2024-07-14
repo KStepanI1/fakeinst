@@ -1,5 +1,3 @@
-const App = () => {
-    return <div>НАЧАЛО</div>;
-};
+const App = () => <div>НАЧАЛО</div>;
 
 export { App };
