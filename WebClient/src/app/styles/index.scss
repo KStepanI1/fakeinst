@@ -1,0 +1,16 @@
+@import "./reset.scss";
+@import "./variables";
+@import "./themes";
+
+body {
+    font: var(--font-m);
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-style: normal;
+    letter-spacing: 0.02rem;
+    color: var(--primary-text);
+    background-color: var(--primary-background);
+}

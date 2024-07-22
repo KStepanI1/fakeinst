@@ -1,3 +1,9 @@
-const App = () => <div>НАЧАЛО</div>;
+import { Button } from "shared/ui/Button";
+
+const App = () => (
+    <div>
+        <Button />
+    </div>
+);
 
 export { App };
