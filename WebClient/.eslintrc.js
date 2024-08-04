@@ -4,7 +4,14 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ["plugin:react/recommended", "airbnb", "plugin:storybook/recommended"],
+    extends: [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:storybook/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+    ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaFeatures: {
@@ -22,6 +29,14 @@ module.exports = {
             2,
             { extensions: [".js", ".jsx", ".tsx"] },
         ],
+        "max-len": [
+            "error",
+            {
+                ignoreComments: true,
+                code: 125,
+            },
+        ],
+        "react-hooks/rules-of-hooks": "error",
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "no-unused-vars": "warn",
@@ -35,7 +50,10 @@ module.exports = {
         "no-underscore-dangle": "off",
         quotes: "off",
         "linebreak-style": "off",
-        "max-len": [140],
+        "no-unused-vars": "off",
+        "react/jsx-max-props-per-line": ["error", { maximum: 4 }],
+        "react/no-unstable-nested-components": "warn",
+        "comma-dangle": "off",
     },
     globals: {
         __IS_DEV__: true,

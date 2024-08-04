@@ -1,19 +1,18 @@
 import React, { FC, memo } from "react";
-import cls from "./Button.module.scss";
 import classNames from "classnames";
+import { ReactButtonProps } from "shared/types/ReactElementProps";
+import cls from "./Button.module.scss";
 import { ThemeButton } from "../config/ThemeButton";
 
-type ReactButtonProps = React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
->;
-
-export interface ButtonProps extends Omit<ReactButtonProps, "ref"> {
+export interface ButtonProps extends ReactButtonProps {
     className?: string;
     theme?: ThemeButton;
 }
 
-const Button: FC<ButtonProps> = (props) => {
+const Button: FC<ButtonProps> = React.forwardRef<
+    HTMLButtonElement,
+    ButtonProps
+>((props, ref) => {
     const {
         className,
         theme = ThemeButton.PRIMARY,
@@ -23,12 +22,15 @@ const Button: FC<ButtonProps> = (props) => {
 
     return (
         <button
+            type="button"
             className={classNames(cls.Button, className, cls[theme])}
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...otherProps}
+            ref={ref}
         >
             {children}
         </button>
     );
-};
+});
 
 export default memo(Button) as typeof Button;

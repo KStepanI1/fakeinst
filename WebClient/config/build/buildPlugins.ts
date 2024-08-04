@@ -1,8 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from "webpack";
-import { BuildOptions, BuildPaths } from "./types/config";
+import { BuildPaths } from "./types/config";
 
 export function buildPlugins(
     paths: BuildPaths,

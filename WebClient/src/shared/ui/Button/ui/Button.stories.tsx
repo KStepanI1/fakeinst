@@ -18,7 +18,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        children: "Button",
+        children: "Войти",
         theme: ThemeButton.PRIMARY,
+    },
+};
+
+export const Secondary: Story = {
+    args: {
+        children: "Подписки",
+        theme: ThemeButton.SECONDARY,
+    },
+};
+
+export const Link: Story = {
+    args: {
+        children: "Подписаться",
+        theme: ThemeButton.LINK,
     },
 };
