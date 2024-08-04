@@ -4,6 +4,7 @@
  */
 
 import type { Config } from "jest";
+import path from "path";
 
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
@@ -24,6 +25,14 @@ const config: Config = {
 
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: ["node_modules"],
+    modulePaths: ["<rootDir>src"],
+
+    setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+
+    moduleNameMapper: {
+        "\\.(s?css)$": "identity-obj-proxy",
+        "\\.svg": path.resolve(__dirname, "./jestEmptyComponent.tsx"),
+    },
 
     // An array of file extensions your modules use
     moduleFileExtensions: [
