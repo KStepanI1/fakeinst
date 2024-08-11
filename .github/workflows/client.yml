@@ -1,4 +1,4 @@
-name: linting, testing, building
+name: client
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
     push:
@@ -29,22 +29,13 @@ jobs:
             - name: linting scss
               working-directory: ./WebClient
               run: npm run lint:scss
-    # visual_tests:
-    #     name: Run Chromatic
-    #     runs-on: ubuntu-latest
-    #     steps:
-    #         - name: Checkout code
-    #           uses: actions/checkout@v4
-    #           with:
-    #               fetch-depth: 0
-    #         - uses: actions/setup-node@v4
-    #           with:
-    #               node-version: ${{ matrix.node-version }}
-    #         - name: Install dependencies
-    #           working-directory: ./WebClient
-    #           run: npm ci
-    #         - name: Run Chromatic
-    #           working-directory: ./WebClient
-    #           uses: chromaui/action@latest
-    #           with:
-    #               projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+            - name: test unit
+              working-directory: ./WebClient
+              run: npm run test:unit
+            - name: Run Chromatic
+              working-directory: ./WebClient
+              uses: chromaui/action@latest
+              with:
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  zip: true
+                  onlyChanged: true
