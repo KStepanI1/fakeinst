@@ -1,1 +1,1 @@
-[![client](https://github.com/KStepanI1/fakeinst/actions/workflows/client.yml/badge.svg)](https://github.com/KStepanI1/fakeinst/actions/workflows/client.yml)
+[![client](https://github.com/KStepanI1/fakeinst/actions/workflows/client.yml/badge.svg)](https://github.com/KStepanI1/fakeinst/actions/workflows/client.yml) [![Chromatic](https://github.com/KStepanI1/fakeinst/actions/workflows/chromatic.yml/badge.svg)](https://github.com/KStepanI1/fakeinst/actions/workflows/chromatic.yml)
