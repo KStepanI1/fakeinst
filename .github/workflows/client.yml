@@ -1,5 +1,4 @@
 name: client
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
     push:
         branches: [master]
@@ -32,10 +31,3 @@ jobs:
             - name: test unit
               working-directory: ./WebClient
               run: npm run test:unit
-            - name: Run Chromatic
-              working-directory: ./WebClient
-              uses: chromaui/action@latest
-              with:
-                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-                  zip: true
-                  onlyChanged: true
