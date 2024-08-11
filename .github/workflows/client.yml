@@ -1,4 +1,4 @@
-name: client
+name: WebClient build
 on:
     push:
         branches: [master]
