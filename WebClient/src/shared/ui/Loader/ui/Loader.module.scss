@@ -1,11 +1,10 @@
-/* HTML: <div class="loader"></div> */
 .Loader {
     aspect-ratio: 1;
     border-radius: 50%;
     border: 4px solid #0000;
-    border-right-color: currentColor;
-    border-top-color: currentColor;
-    border-bottom-color: currentColor;
+    border-right-color: currentcolor;
+    border-top-color: currentcolor;
+    border-bottom-color: currentcolor;
     position: relative;
     animation: l24 1s infinite linear;
 }

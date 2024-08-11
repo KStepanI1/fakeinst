@@ -28,7 +28,7 @@ const Block: FC<BlockProps> = React.forwardRef<HTMLDivElement, BlockProps>(
                 {children}
             </div>
         );
-    }
+    },
 );
 
 export default memo(Block) as typeof Block;

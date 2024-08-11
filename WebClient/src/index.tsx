@@ -16,5 +16,5 @@ root.render(
                 <App />
             </ErrorBoundary>
         </BrowserRouter>
-    </StoreProvider>
+    </StoreProvider>,
 );
