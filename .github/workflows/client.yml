@@ -17,18 +17,17 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: Change to root directory
-              run: |
-                  ls -la 
-                  cd ./WebClient
-                  ls -la
             - name: install modules
+              working-directory: ./WebClient
               run: npm ci
             - name: build production project
+              working-directory: ./WebClient
               run: npm run build
             - name: linting typescript
+              working-directory: ./WebClient
               run: npm run lint:ts
             - name: linting typescript
+              working-directory: ./WebClient
               run: npm run lint:scss
     visual_tests:
         name: Run Chromatic
@@ -41,12 +40,8 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: Change to root directory
-              run: |
-                  ls -la 
-                  cd ./WebClient
-                  ls -la
             - name: Install dependencies
+              working-directory: ./WebClient
               run: npm ci
             - name: Run Chromatic
               uses: chromaui/action@latest
