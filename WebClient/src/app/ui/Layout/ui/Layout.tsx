@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import classNames from "classnames";
 import { Outlet } from "react-router-dom";
 import Header from "widgets/Header/ui/Header";
-import cls from "./Layout.module.scss";
 
 export interface LayoutProps {
     className?: string;
@@ -11,9 +10,9 @@ export interface LayoutProps {
 const Layout: FC<LayoutProps> = (props) => {
     const { className } = props;
     return (
-        <div className={classNames(cls.Layout, className)}>
+        <div className={classNames(className)}>
             <Header />
-            <main className={cls.main}>
+            <main>
                 <Outlet />
             </main>
         </div>
